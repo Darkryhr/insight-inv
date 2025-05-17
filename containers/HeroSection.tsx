@@ -1,6 +1,9 @@
 const HeroSection = () => {
   return (
-    <section className='px-6 py-12 max-w-7xl mx-auto h-screen'>
+    <section
+      className='px-6 py-12 max-w-7xl mx-auto h-screen'
+      id='hero-section'
+    >
       <div className='bg-[url(/hero.jpg)] bg-cover w-full h-full absolute -z-10 left-0 top-0'></div>
       <div className='flex flex-col justify-center h-full pb-30 items-start'>
         <h1 className='font-bold text-7xl'>Bespoke investigators</h1>

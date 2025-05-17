@@ -3,10 +3,6 @@ import Image from 'next/image';
 const AboutSection = () => {
   return (
     <section className='px-4 py-12 max-w-7xl mx-auto relative'>
-      <span className='absolute font-black text-9xl opacity-5 z-0 top-0 -left-20'>
-        About
-      </span>
-
       <h2 className='font-bold text-4xl'>About us</h2>
       <div className='flex overflow-hidden'>
         <div className='flex mt-8 space-x-4'>

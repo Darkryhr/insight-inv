@@ -1,9 +1,39 @@
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 import { BiSolidDownArrow } from 'react-icons/bi';
 
 const Header = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsSticky(!entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+        rootMargin: '-120px 0px 0px 0px', // top, right, bottom, left
+      }
+    );
+
+    const hero = document.querySelector('#hero-section');
+    if (hero) {
+      observer.observe(hero);
+      heroRef.current = hero;
+    }
+
+    return () => {
+      if (heroRef.current) observer.unobserve(heroRef.current);
+    };
+  }, []);
+
   return (
-    <header className='bg-none w-full sticky top-0 z-50 h-24 flex items-center'>
+    <header
+      className={`w-full sticky top-0 z-50 h-22 flex items-center transition-colors duration-300 ${
+        isSticky ? 'bg-brand drop-shadow-2xl' : 'bg-transparent'
+      }`}
+    >
       <div className='mx-auto px-6 sm:px-6 lg:px-8 flex items-center justify-between h-16 w-full'>
         <div className='flex-shrink-0 flex-1 justify-start'>
           <Link href='/' className='text-xl font-bold'>

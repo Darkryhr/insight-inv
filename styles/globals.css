@@ -11,6 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-brand: #141414;
+  --color-brand-lighter: #1a1a1a;
 }
 
 @media (prefers-color-scheme: dark) {
