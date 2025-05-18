@@ -4,7 +4,7 @@ import ExperienceCard from '@/components/ExperienceCard';
 
 const ExperienceSection = () => {
   return (
-    <section className='px-4 py-12 max-w-7xl mx-auto relative'>
+    <section className='px-8 py-16 max-w-7xl mx-auto relative'>
       <h2 className='font-bold text-4xl'>Experience</h2>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-10  mt-20'>
         <ExperienceCard

@@ -20,7 +20,7 @@ export default function Document() {
         <meta name='apple-mobile-web-app-title' content='Insight' />
         <link rel='manifest' href='/site.webmanifest' />
       </Head>
-      <body className='antialiased'>
+      <body className='antialiased scroll-smooth font-display'>
         <Main />
         <NextScript />
       </body>
