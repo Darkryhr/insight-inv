@@ -12,6 +12,9 @@ const Footer = () => {
           <h4 className='font-semibold'>Sitemap</h4>
           <ul>
             <li className='opacity-50 font-light text-sm'>
+              <a href='#hero'>Home</a>
+            </li>
+            <li className='opacity-50 font-light text-sm'>
               <a href='#about'>About us</a>
             </li>
             <li className='opacity-50 font-light text-sm'>
@@ -21,7 +24,7 @@ const Footer = () => {
               <a href='#faq'>FAQ</a>
             </li>
             <li className='opacity-50 font-light text-sm'>
-              <Link href='#'>Contact us</Link>
+              <Link href='/contact'>Contact us</Link>
             </li>
           </ul>
         </div>
@@ -70,22 +73,22 @@ const SocialButtons = () => {
   return (
     <div className='grid grid-cols-4 gap-4'>
       <Link href={''}>
-        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black'>
+        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
           <FaInstagram size={14} />
         </button>
       </Link>
       <Link href={''}>
-        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700'>
+        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
           <FaFacebook size={14} />
         </button>
       </Link>
       <Link href={''}>
-        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700'>
+        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
           <FaTiktok size={14} />
         </button>
       </Link>
       <Link href={''}>
-        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700'>
+        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
           <FaLinkedin size={14} />
         </button>
       </Link>

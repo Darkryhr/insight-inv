@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 
 const Layout = ({ children }) => {
   return (
-    <main className='font-display'>
+    <main className='font-display no-scrollbar'>
       <Header />
       {children}
       <Footer />

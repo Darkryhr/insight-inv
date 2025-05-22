@@ -1,27 +1,39 @@
 import {
   Dialog,
   DialogPanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
   Transition,
   TransitionChild,
 } from '@headlessui/react';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { BiSolidDownArrow } from 'react-icons/bi';
+import { FaChevronRight } from 'react-icons/fa';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { IoIosClose } from 'react-icons/io';
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const heroRef = useRef(null);
-  const pathname = usePathname();
+  const router = useRouter();
+  const { t } = useTranslation('header');
+
+  const { locale, asPath } = router;
+
+  const changeTo = locale === 'he' ? 'en' : 'he';
 
   const navigation = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'FAQ', href: '#faq' },
+    { name: t('nav.home'), href: '#hero' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.faq'), href: '#faq' },
   ];
 
   useEffect(() => {
@@ -41,8 +53,29 @@ const Header = () => {
       heroRef.current = hero;
     }
 
+    const sections = document.querySelectorAll('section[data-section]');
+    const sectionObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('data-section');
+            if (id) setActiveSection(id);
+          }
+        });
+      },
+      {
+        threshold: 0.6, // tweak as needed
+        rootMargin: '0px 0px -40% 0px',
+      }
+    );
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+
     return () => {
       if (heroRef.current) observer.unobserve(heroRef.current);
+      sections.forEach(section => sectionObserver.unobserve(section));
     };
   }, []);
 
@@ -53,24 +86,25 @@ const Header = () => {
       }`}
     >
       <div className='mx-auto px-6 sm:px-6 lg:px-8 flex items-center justify-between h-16 w-full'>
-        <div className='flex-shrink-0 flex-1 justify-start'>
-          <Link href='/' className='text-xl font-bold'>
+        <div className='flex-shrink-0 lg:flex-1 justify-start'>
+          <Link href='/'>
             <Logo />
           </Link>
         </div>
 
+        {/* === Desktop Navigation === */}
         <nav
-          className='hidden md:flex space-x-14 flex-1 justify-center'
+          className='hidden lg:flex space-x-14 flex-1 justify-center'
           aria-label='Main navigation'
         >
           {navigation.map(item => (
             <a
               key={item.name}
               href={item.href}
-              className={`transition px-4 py-2 rounded-md ${
-                pathname === item.href
-                  ? 'text-blue-600 font-semibold'
-                  : 'text-gray-100 hover:text-blue-600'
+              className={`transition-colors capitalize duration-300 px-4 py-2 hover:text-zinc-50 ${
+                activeSection === item.name
+                  ? 'border-b-2 font-bold'
+                  : 'text-zinc-400'
               }`}
             >
               {item.name}
@@ -78,22 +112,46 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className='hidden md:flex items-center space-x-4 flex-1 justify-end'>
-          <button className='text-sm font-bold flex items-center gap-1.5'>
-            En
-            <BiSolidDownArrow size={10} />
-          </button>
+        <div className='hidden lg:flex items-center space-x-4 flex-1 justify-end'>
+          <Menu>
+            <MenuButton className='text-sm font-bold items-center cursor-pointer inline-flex gap-2 shadow-inner focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white'>
+              {t('locale')}
+              <BiSolidDownArrow size={10} />
+            </MenuButton>
+            <MenuItems
+              transition
+              anchor='bottom end'
+              className='origin-top-right rounded-xl border border-white/5 bg-brand p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0'
+            >
+              <MenuItem>
+                <Link
+                  href={asPath}
+                  locale={changeTo}
+                  className='group font-bold flex w-full items-center rounded-lg px-4 py-3 data-focus:bg-white/10 cursor-pointer '
+                >
+                  {t('localeSwitcher')}
+                </Link>
+              </MenuItem>
+            </MenuItems>
+          </Menu>
           <Link
             href='/contact'
-            className='bg-gray-50 text-brand py-2 px-6 font-semibold ml-4 rounded'
+            className='bg-gray-50 text-brand py-3 px-7 pr-6 font-bold ml-4 rounded bg-linear-to-bl from-white to-zinc-300 flex transition items-center'
+          >
+            {t('cta')}
+            <FaChevronRight className='ml-2 h-3 w-2' />
+          </Link>
+          {/* <Link
+            href='/contact'
+            className='border-2 border-zinc-600 text-gray-50 py-3 px-6 font-bold ml-4 rounded'
           >
             Contact us
-          </Link>
+          </Link> */}
         </div>
 
         <button
           onClick={() => setMobileNavOpen(true)}
-          className='md:hidden text-white'
+          className='lg:hidden text-white'
           aria-label='Toggle navigation'
         >
           <HiOutlineMenuAlt3 size={28} />
@@ -103,7 +161,7 @@ const Header = () => {
           <Dialog
             as='div'
             onClose={setMobileNavOpen}
-            className='relative z-50 md:hidden'
+            className='relative z-50 lg:hidden'
           >
             <TransitionChild
               as={Fragment}
@@ -140,7 +198,7 @@ const Header = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className='text-xl transition-colors duration-100 hover:bg-white hover:text-brand pl-8 py-8 m-0 font-semibold'
+                      className='text-xl capitalize transition-colors duration-100 hover:bg-white hover:text-brand pl-8 py-8 m-0 font-semibold'
                       onClick={() => setMobileNavOpen(false)}
                     >
                       {item.name}

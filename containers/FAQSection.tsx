@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
 import QuestionRow from '@/components/QuestionRow';
@@ -18,10 +19,16 @@ const faqs = [
 ];
 
 const FAQSection = () => {
+  const { t } = useTranslation('common');
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className='px-8 py-24 max-w-7xl mx-auto' id='faq'>
+    <section
+      className='px-8 py-24 max-w-7xl mx-auto'
+      id='faq'
+      data-section='fAQ'
+    >
       <h2 className='font-bold text-4xl'>FAQ</h2>
       {faqs.map((faq, index) => (
         <QuestionRow

@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "home": "בית",
+    "about": "לגבינו",
+    "services": "שירותים",
+    "faq": "שאלות נפוצות"
+  },
+  "locale": "He",
+  "localeSwitcher": "En",
+  "cta": "צרו קשר"
+}
