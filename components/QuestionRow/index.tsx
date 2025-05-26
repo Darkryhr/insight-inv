@@ -13,7 +13,7 @@ import {
 const QuestionRow = ({ question, answer, index, openIndex, setOpenIndex }) => {
   return (
     <div className='mt-8'>
-      <Disclosure as='div' className='w-full' defaultOpen={false}>
+      <Disclosure as='div' className='w-full ' defaultOpen={false}>
         {({ open }) => (
           <>
             <DisclosureButton
@@ -27,7 +27,7 @@ const QuestionRow = ({ question, answer, index, openIndex, setOpenIndex }) => {
                 <MdAddCircleOutline size={24} />
               )}
             </DisclosureButton>
-            <div className='overflow-hidden py-2'>
+            <div className='overflow-hidden py-2 transition-all'>
               <AnimatePresence>
                 {openIndex === index && (
                   <DisclosurePanel static as={Fragment}>

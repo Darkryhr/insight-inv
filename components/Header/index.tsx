@@ -114,32 +114,42 @@ const Header = () => {
 
         <div className='hidden lg:flex items-center space-x-4 flex-1 justify-end'>
           <Menu>
-            <MenuButton className='text-sm font-bold items-center cursor-pointer inline-flex gap-2 shadow-inner focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white'>
-              {t('locale')}
-              <BiSolidDownArrow size={10} />
-            </MenuButton>
-            <MenuItems
-              transition
-              anchor='bottom end'
-              className='origin-top-right rounded-xl border border-white/5 bg-brand p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0'
-            >
-              <MenuItem>
-                <Link
-                  href={asPath}
-                  locale={changeTo}
-                  className='group font-bold flex w-full items-center rounded-lg px-4 py-3 data-focus:bg-white/10 cursor-pointer '
+            {({ open }) => (
+              <>
+                <MenuButton className='text-sm font-bold items-center cursor-pointer inline-flex gap-2 shadow-inner focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white hover:opacity-80 transition-opacity duration-100'>
+                  {t('locale')}
+                  <BiSolidDownArrow
+                    size={10}
+                    className={`${
+                      open ? 'rotate-180' : 'rotate-0'
+                    } transition-transform duration-300`}
+                  />
+                </MenuButton>
+                <MenuItems
+                  transition
+                  anchor='bottom end'
+                  className='origin-top-right rounded-xl border border-white/5 bg-brand p-1 text-sm/6 text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0 z-50'
                 >
-                  {t('localeSwitcher')}
-                </Link>
-              </MenuItem>
-            </MenuItems>
+                  <MenuItem>
+                    <Link
+                      href={asPath}
+                      locale={changeTo}
+                      className='group font-bold flex w-full items-center rounded-lg px-4 py-3 data-focus:bg-white/10 cursor-pointer '
+                    >
+                      {t('localeSwitcher')}
+                    </Link>
+                  </MenuItem>
+                </MenuItems>
+              </>
+            )}
           </Menu>
+
           <Link
             href='/contact'
-            className='bg-gray-50 text-brand py-3 px-7 pr-6 font-bold ml-4 rounded bg-linear-to-bl from-white to-zinc-300 flex transition items-center'
+            className=' bg-gray-50 text-brand py-3 px-7 pr-6 font-bold ml-4 rounded bg-linear-to-bl from-white to-zinc-300 flex transition items-center group hover:scale-105 duration-300'
           >
             {t('cta')}
-            <FaChevronRight className='ml-2 h-3 w-2' />
+            <FaChevronRight className='ml-2 h-3 w-2 transition duration-300 group-hover:translate-x-1' />
           </Link>
           {/* <Link
             href='/contact'
@@ -206,6 +216,7 @@ const Header = () => {
                   ))}
                   <Link
                     href='/contact'
+                    locale={locale}
                     className='bg-white text-brand py-6 pl-8 font-bold text-2xl'
                   >
                     Contact us

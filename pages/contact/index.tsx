@@ -1,5 +1,4 @@
-import ContactForm from '@/components/ContactForm';
-import OfficeMap from '@/components/ContactForm/OfficeMap';
+import { useTranslation } from 'next-i18next';
 import React from 'react';
 import {
   MdOutlineHome,
@@ -7,28 +6,52 @@ import {
   MdOutlineMailOutline,
 } from 'react-icons/md';
 
+import ContactForm from '@/components/ContactForm';
+import OfficeMap from '@/components/ContactForm/OfficeMap';
+import { withTranslationProps } from '@/lib/withTranslationProps';
+
+export const getStaticProps = withTranslationProps([
+  'common',
+  'header',
+  'footer',
+]);
+
 const Contact = () => {
+  const { t } = useTranslation('contact');
+
+  const contactInfo = [
+    {
+      key: t('contactInfo.email'),
+      value: 'mailto:office@insight-inv.co.il',
+      icon: <MdOutlineMailOutline size={18} />,
+    },
+    {
+      key: t('contactInfo.phone'),
+      value: 'tel:+972548022001',
+      icon: <MdOutlineLocalPhone size={18} />,
+    },
+
+    {
+      key: t('contactInfo.address'),
+      value: t('contactInfo.addressValue'),
+      icon: <MdOutlineHome size={22} />,
+    },
+  ];
+
   return (
     <section className='px-8 py-12 max-w-7xl mx-auto relative scroll-mt-20'>
       <div className='bg-brand-lighter rounded-lg py-14 px-10 grid grid-cols-1 md:grid-cols-2 gap-8'>
         <ContactForm />
         <div className=''>
           <div className='flex flex-col space-y-4 mb-8 mt-4 md:mt-0'>
-            <ContactInfo
-              title='Address'
-              info='blah-blah 15, 21351'
-              icon={<MdOutlineHome size={22} />}
-            />
-            <ContactInfo
-              title='Phone'
-              info='055 555 5555'
-              icon={<MdOutlineLocalPhone size={18} />}
-            />
-            <ContactInfo
-              title='Email'
-              info='wireframe@mail.com'
-              icon={<MdOutlineMailOutline size={18} />}
-            />
+            {contactInfo.map((item, index) => (
+              <ContactInfo
+                title={item.key}
+                info={item.value}
+                key={index}
+                icon={item.icon}
+              />
+            ))}
           </div>
           <OfficeMap />
         </div>
@@ -52,3 +75,6 @@ const ContactInfo = ({ title, info, icon }) => {
     </div>
   );
 };
+
+//   "address": "Ha-Kharoshet St 30"
+//   "address": "החרושת 30, אור יהודה"

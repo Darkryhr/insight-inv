@@ -1,7 +1,34 @@
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import { useRouter } from 'next/router';
+import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 const Footer = () => {
+  const { t } = useTranslation('footer');
+  const router = useRouter();
+
+  const { locale, asPath } = router;
+  const changeTo = locale === 'he' ? 'en' : 'he';
+
+  const sitemap = [
+    { name: t('sitemap.home'), href: '#hero' },
+    { name: t('sitemap.about'), href: '#about' },
+    { name: t('sitemap.services'), href: '#services' },
+    { name: t('sitemap.faq'), href: '#faq' },
+    { name: t('sitemap.contact'), href: '/contact' },
+  ];
+
+  const contactInfo = [
+    { name: t('contactInfo.email'), href: 'mailto:office@insight-inv.co.il' },
+    { name: t('contactInfo.phone'), href: 'tel:+972548022001' },
+    {
+      name: t('contactInfo.address'),
+      href: 'https://maps.app.goo.gl/w8Py8SitJ42A3uga8',
+    },
+  ];
+
+  const legal = [];
+
   return (
     <footer className='bg-black w-full px-8 sm:px-6 lg:px-8 pt-12'>
       <div className='max-w-7xl grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 mx-auto gap-10'>
@@ -9,47 +36,55 @@ const Footer = () => {
           <Logo />
         </div>
         <div className='md:mx-auto'>
-          <h4 className='font-semibold'>Sitemap</h4>
+          <h4 className='font-semibold'>{t('sitemap.heading')}</h4>
           <ul>
-            <li className='opacity-50 font-light text-sm'>
-              <a href='#hero'>Home</a>
-            </li>
-            <li className='opacity-50 font-light text-sm'>
-              <a href='#about'>About us</a>
-            </li>
-            <li className='opacity-50 font-light text-sm'>
-              <a href='#services'>our services</a>
-            </li>
-            <li className='opacity-50 font-light text-sm'>
-              <a href='#faq'>FAQ</a>
-            </li>
-            <li className='opacity-50 font-light text-sm'>
-              <Link href='/contact'>Contact us</Link>
-            </li>
+            {sitemap.map(navlink =>
+              navlink.href !== '/contact' ? (
+                <li
+                  className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'
+                  key={navlink.href}
+                >
+                  <a href={navlink.href}>{navlink.name}</a>
+                </li>
+              ) : (
+                <li
+                  className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'
+                  key={navlink.href}
+                >
+                  <Link href={navlink.href} locale={changeTo}>
+                    {navlink.name}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </div>
         <div className='md:mx-auto'>
-          <h4 className='font-semibold text-left'>Contact info</h4>
+          <h4 className='font-semibold text-left'>
+            {t('contactInfo.heading')}
+          </h4>
+
           <ul>
-            <li className='opacity-50 font-light text-sm'>
-              <Link href={'/'}>T:555-5555</Link>
-            </li>
-            <li className='opacity-50 font-light text-sm'>
-              <Link href={'/'}>E:ssdfgn@mail.com</Link>
-            </li>
-            <li className='opacity-50 font-light text-sm'>
-              <Link href={'/'}>A:dsgsdg, 15</Link>
-            </li>
+            {contactInfo.map(contactLink => (
+              <li
+                className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'
+                key={contactLink.href}
+              >
+                <a href={contactLink.href} rel='noreferrer' target='_blank'>
+                  {contactLink.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div className='md:mx-auto'>
-          <h4 className='font-semibold'>Legal</h4>
+          <h4 className='font-semibold'>{t('legal.heading')}</h4>
           <ul>
-            <li className='opacity-50 font-light text-sm'>
-              <Link href={'/'}>Privacy Policy</Link>
+            <li className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'>
+              <Link href={'/'}>{t('legal.privacyPolicy')}</Link>
             </li>
-            <li className='opacity-50 font-light text-sm'>
-              <Link href={'/'}>Terms of Use</Link>
+            <li className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'>
+              <Link href={'/'}>{t('legal.termsOfUse')}</Link>
             </li>
           </ul>
         </div>
@@ -71,28 +106,37 @@ export default Footer;
 
 const SocialButtons = () => {
   return (
-    <div className='grid grid-cols-4 gap-4'>
-      <Link href={''}>
-        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
-          <FaInstagram size={14} />
-        </button>
-      </Link>
-      <Link href={''}>
-        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
-          <FaFacebook size={14} />
-        </button>
-      </Link>
-      <Link href={''}>
-        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
-          <FaTiktok size={14} />
-        </button>
-      </Link>
-      <Link href={''}>
-        <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
-          <FaLinkedin size={14} />
-        </button>
-      </Link>
-    </div>
+    <ul className='grid grid-cols-3 gap-4'>
+      <li>
+        <a
+          href='https://www.instagram.com/insight_inv/'
+          rel='noreferrer'
+          target='_blank'
+        >
+          <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
+            <FaInstagram size={14} />
+          </button>
+        </a>
+      </li>
+      <li>
+        <a
+          href='https://www.facebook.com/MagenInv'
+          rel='noreferrer'
+          target='_blank'
+        >
+          <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
+            <FaFacebook size={14} />
+          </button>
+        </a>
+      </li>
+      <li>
+        <a href={''}>
+          <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
+            <FaTiktok size={14} />
+          </button>
+        </a>
+      </li>
+    </ul>
   );
 };
 

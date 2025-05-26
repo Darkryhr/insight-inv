@@ -1,0 +1,21 @@
+{
+  "sitemap": {
+    "heading": "Sitemap",
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "faq": "FAQ",
+    "contact": "Contact us"
+  },
+  "contactInfo": {
+    "heading": "Contact info",
+    "email": "E: office@insight-inv.co.il",
+    "phone": "T: 054 802 2001",
+    "address": "A: Ha-Kharoshet St 30"
+  },
+  "legal": {
+    "heading": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Term of Use"
+  }
+}

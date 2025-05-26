@@ -7,8 +7,8 @@ const OfficeMap = () => {
   };
 
   const defaultCenter = {
-    lat: 40.7128, // New York
-    lng: -74.006,
+    lat: 32.02262883670007,
+    lng: 34.86486529024025,
   };
 
   return (

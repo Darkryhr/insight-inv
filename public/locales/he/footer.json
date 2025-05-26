@@ -1,0 +1,21 @@
+{
+  "sitemap": {
+    "heading": "מפת אתר",
+    "home": "בית",
+    "about": "לגבינו",
+    "services": "שירותים",
+    "faq": "שאלות נפוצות",
+    "contact": "צרו קשר"
+  },
+  "contactInfo": {
+    "heading": "יצירת קשר",
+    "email": "א: office@insight-inv.co.il",
+    "phone": "ט: 054 802 2001",
+    "address": "כ: החרושת 30, אור יהודה"
+  },
+  "legal": {
+    "heading": "תקנון",
+    "privacyPolicy": "מדיניות פרטיות",
+    "termsOfUse": "תנאי השימוש"
+  }
+}
