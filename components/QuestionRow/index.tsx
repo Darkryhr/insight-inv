@@ -14,7 +14,7 @@ const QuestionRow = ({ question, answer, index, openIndex, setOpenIndex }) => {
   return (
     <div className='mt-8'>
       <Disclosure as='div' className='w-full ' defaultOpen={false}>
-        {({ open }) => (
+        {() => (
           <>
             <DisclosureButton
               className='border-b pb-3 text-left cursor-pointer flex justify-between w-full font-semibold'
