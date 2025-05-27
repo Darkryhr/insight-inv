@@ -19,15 +19,15 @@
   font-style: normal;
   font-weight: 100 200 300 400 500 600 700 800 900;
   font-display: swap;
-  src: url('/fonts/Raleway-VariableFont_wght.ttf') format('ttf');
+  src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: Heebo;
+  font-family: 'Noto';
   font-style: normal;
-  font-weight: 100 200 300 400 500 600 700 800 900;
+  font-weight: 400;
   font-display: swap;
-  src: url('/fonts/Heebo-VariableFont_wght.ttf') format('ttf');
+  src: url('/fonts/NotoSansHebrew-VariableFont.ttf') format('truetype');
 }
 
 @theme inline {
@@ -36,7 +36,7 @@
   --color-brand: #141414;
   --color-brand-lighter: #1a1a1a;
   --font-english: 'Raleway', 'sans-serif';
-  --font-hebrew: 'Heebo', 'sans-serif';
+  --font-hebrew: 'Noto', 'sans-serif';
 }
 
 @media (prefers-color-scheme: dark) {

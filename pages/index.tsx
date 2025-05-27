@@ -56,6 +56,7 @@ export default function Home() {
       </Head>
       <div className=''>
         <HeroSection />
+        <p style={{ fontFamily: 'Noto' }}>עברית</p>
         <div className='relative overflow-x-clip'>
           <span className='absolute font-black text-9xl opacity-5 -z-10 top-0'>
             About

@@ -6,11 +6,11 @@ const clients = [
   { name: 'Amazon', logo: '/logos/amazon.svg' },
   { name: 'Meta', logo: '/logos/meta.svg' },
   { name: 'Netflix', logo: '/logos/netflix.svg' },
-  // { name: 'Apple', logo: '/logos/apple.svg' },
-  // { name: 'Google', logo: '/logos/google.svg' },
-  // { name: 'Amazon', logo: '/logos/amazon.svg' },
-  // { name: 'Meta', logo: '/logos/meta.svg' },
-  // { name: 'Netflix', logo: '/logos/netflix.svg' },
+  { name: 'Apple', logo: '/logos/apple.svg' },
+  { name: 'Google', logo: '/logos/google.svg' },
+  { name: 'Amazon', logo: '/logos/amazon.svg' },
+  { name: 'Meta', logo: '/logos/meta.svg' },
+  { name: 'Netflix', logo: '/logos/netflix.svg' },
 ];
 
 const ClientCarousel = () => {
@@ -20,6 +20,7 @@ const ClientCarousel = () => {
       <div className='pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-zinc-600 to-transparent z-10' />
       <div
         className='whitespace-nowrap flex items-center gap-8
+        animate-scroll group-hover:[animation-play-state:paused]
        '
       >
         {[...clients, ...clients].map((client, i) => (
@@ -35,5 +36,3 @@ const ClientCarousel = () => {
 };
 
 export default ClientCarousel;
-
-// animate-scroll group-hover:[animation-play-state:paused]
