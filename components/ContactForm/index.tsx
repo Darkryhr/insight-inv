@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 type Inputs = {
@@ -14,6 +15,8 @@ const ContactForm = () => {
     watch,
     formState: { errors },
   } = useForm<Inputs>();
+
+  const { t } = useTranslation('contact');
 
   async function sendTestEmail() {
     const res = await fetch('/api/send-email', {
@@ -36,11 +39,8 @@ const ContactForm = () => {
 
   return (
     <div className=''>
-      <h2 className='font-bold text-4xl'>Contact us</h2>
-      <p className='mt-8'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempora
-        totam numquam, pariatur esse architecto!
-      </p>
+      <h2 className='font-bold text-4xl'>{t('form.formHeading')}</h2>
+      <p className='mt-8'>{t('form.formDescription')}</p>
       <form className='mx-auto mt-8' onSubmit={handleSubmit(onSubmit)}>
         <div className='relative z-0 w-full mb-5 group'>
           <input
@@ -55,7 +55,7 @@ const ContactForm = () => {
             htmlFor='name'
             className='text-zinc-500 peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-zinc-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
           >
-            Name
+            {t('form.nameInputLabel')}
           </label>
         </div>
         <div className='relative z-0 w-full mb-5 group'>
@@ -71,7 +71,7 @@ const ContactForm = () => {
             htmlFor='email'
             className='text-zinc-500 peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-zinc-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
           >
-            E-mail
+            {t('form.emailInputLabel')}
           </label>
         </div>
         <div className='relative z-0 w-full mb-5 group'>
@@ -87,7 +87,7 @@ const ContactForm = () => {
             htmlFor='phonenumber'
             className='text-zinc-500 peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-zinc-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
           >
-            Phone number
+            {t('form.phoneInputLabel')}
           </label>
         </div>
         <div className='relative z-0 w-full mb-5 group'>
@@ -103,14 +103,14 @@ const ContactForm = () => {
             htmlFor='message'
             className='text-zinc-500 peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-zinc-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
           >
-            Message
+            {t('form.messageInputLabel')}
           </label>
         </div>
         <button
           type='submit'
           className='bg-gray-50 text-brand py-2 px-6 font-semibold mt-8 cursor-pointer rounded'
         >
-          Send
+          {t('form.submitButton')}
         </button>
       </form>
     </div>

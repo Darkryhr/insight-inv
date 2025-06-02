@@ -4,7 +4,7 @@ export default function Document(props: any) {
   const locale = props.__NEXT_DATA__.locale || 'en';
 
   return (
-    <Html lang={locale} className='no-scrollbar'>
+    <Html lang={locale} className='no-scrollbar' dir='rtl'>
       <Head>
         <link
           rel='icon'

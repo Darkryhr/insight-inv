@@ -60,9 +60,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className='md:mx-auto'>
-          <h4 className='font-semibold text-left'>
-            {t('contactInfo.heading')}
-          </h4>
+          <h4 className='font-semibold'>{t('contactInfo.heading')}</h4>
 
           <ul>
             {contactInfo.map(contactLink => (

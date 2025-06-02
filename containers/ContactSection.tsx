@@ -14,19 +14,21 @@ const ContactSection = () => {
 
   const contactInfo = [
     {
-      key: t('contactInfo.email'),
-      value: 'mailto:office@insight-inv.co.il',
+      heading: t('emailHeading'),
+      info: t('email'),
+      href: 'mailto:office@insight-inv.co.il',
       icon: <MdOutlineMailOutline size={18} />,
     },
     {
-      key: t('contactInfo.phone'),
-      value: 'tel:+972548022001',
+      heading: t('phoneNumberHeading'),
+      info: t('phoneNumber'),
+      href: 'tel:+972548022001',
       icon: <MdOutlineLocalPhone size={18} />,
     },
-
     {
-      key: t('contactInfo.address'),
-      value: t('contactInfo.addressValue'),
+      heading: t('addressHeading'),
+      info: t('addressValue'),
+      href: 'https://maps.app.goo.gl/w8Py8SitJ42A3uga8',
       icon: <MdOutlineHome size={22} />,
     },
   ];
@@ -39,8 +41,9 @@ const ContactSection = () => {
           <div className='flex flex-col space-y-4 mb-8 mt-4 md:mt-0'>
             {contactInfo.map((item, index) => (
               <ContactInfo
-                title={item.key}
-                info={item.value}
+                title={item.heading}
+                info={item.info}
+                href={item.href}
                 key={index}
                 icon={item.icon}
               />
@@ -55,16 +58,21 @@ const ContactSection = () => {
 
 export default ContactSection;
 
-const ContactInfo = ({ title, info, icon }) => {
+const ContactInfo = ({ title, info, href, icon }) => {
   return (
-    <div className='bg-zinc-800 text-sm flex px-3 py-4 rounded-lg items-center'>
-      <div className='text-brand bg-zinc-100 rounded-full flex items-center justify-center w-8 h-8 mr-3'>
+    <a
+      className='bg-zinc-800 text-sm flex px-3 py-4 rounded-lg items-center'
+      href={href}
+      rel='noreferrer'
+      target='_blank'
+    >
+      <div className='text-brand bg-zinc-100 rounded-full flex items-center justify-center w-8 h-8 ltr:mr-3 rtl:ml-3'>
         {icon}
       </div>
       <div className=''>
         <h6 className='font-semibold'>{title}</h6>
         <p className='font-light text-zinc-300'>{info}</p>
       </div>
-    </div>
+    </a>
   );
 };

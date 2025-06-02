@@ -14,8 +14,13 @@ import { withTranslationProps } from '@/lib/withTranslationProps';
 export const getStaticProps = withTranslationProps([
   'common',
   'header',
-  'footer',
+  'hero',
+  'about',
+  'experience',
+  'services',
+  'faq',
   'contact',
+  'footer',
 ]);
 
 export default function Home() {

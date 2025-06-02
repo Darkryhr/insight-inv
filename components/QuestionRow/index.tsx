@@ -17,10 +17,10 @@ const QuestionRow = ({ question, answer, index, openIndex, setOpenIndex }) => {
         {({ open }) => (
           <>
             <DisclosureButton
-              className='border-b pb-3 text-left cursor-pointer flex justify-between w-full font-semibold'
+              className='border-b pb-3 cursor-pointer flex justify-between w-full font-semibold'
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             >
-              {question}
+              <p className='rtl:text-right'>{question}</p>
               {openIndex === index ? (
                 <MdOutlineRemoveCircleOutline size={24} />
               ) : (
@@ -33,12 +33,12 @@ const QuestionRow = ({ question, answer, index, openIndex, setOpenIndex }) => {
                   <DisclosurePanel static as={Fragment}>
                     <motion.div
                       initial={{ opacity: 0, y: -24 }}
-                      animate={{ opacity: 0.5, y: 0 }}
+                      animate={{ opacity: 0.7, y: 0 }}
                       exit={{ opacity: 0, y: -24 }}
                       transition={{ duration: 0.3, ease: easeOut }}
-                      className='origin-bottom opacity-50'
+                      className='origin-bottom whitespace-pre-line rtl:pl-12'
                     >
-                      {answer}
+                      <>{answer}</>
                     </motion.div>
                   </DisclosurePanel>
                 )}
