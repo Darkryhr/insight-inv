@@ -1,4 +1,39 @@
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+type Inputs = {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+};
+
 const ContactForm = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  async function sendTestEmail() {
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        to: 'recipient@example.com',
+        subject: 'Hello from Next.js',
+        text: 'This is a test email sent from a Next.js API route.',
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+  }
+
+  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+
   return (
     <div className=''>
       <h2 className='font-bold text-4xl'>Contact us</h2>
@@ -6,14 +41,15 @@ const ContactForm = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempora
         totam numquam, pariatur esse architecto!
       </p>
-      <form className='mx-auto mt-8'>
+      <form className='mx-auto mt-8' onSubmit={handleSubmit(onSubmit)}>
         <div className='relative z-0 w-full mb-5 group'>
           <input
             type='text'
             id='name'
             name='name'
             placeholder=' '
-            className='block py-3 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
+            className='block py-3 px-0 w-full text-gray-50 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
+            {...register('name')}
           />
           <label
             htmlFor='name'
@@ -28,7 +64,8 @@ const ContactForm = () => {
             id='email'
             name='email'
             placeholder=' '
-            className='block py-3 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
+            className='block py-3 px-0 w-full text-gray-50 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
+            {...register('email')}
           />
           <label
             htmlFor='email'
@@ -43,7 +80,8 @@ const ContactForm = () => {
             id='phonenumber'
             name='phonenumber'
             placeholder=' '
-            className='block py-3 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
+            className='block py-3 px-0 w-full text-gray-50 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
+            {...register('phone')}
           />
           <label
             htmlFor='phonenumber'
@@ -57,8 +95,9 @@ const ContactForm = () => {
             name='message'
             id='message'
             placeholder=' '
-            className='block py-3 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
+            className='block py-3 px-0 w-full text-gray-50 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
             rows={5}
+            {...register('message')}
           ></textarea>
           <label
             htmlFor='message'

@@ -8,12 +8,14 @@ import {
   HeroSection,
   ServicesSection,
 } from '@/containers';
+import ContactSection from '@/containers/ContactSection';
 import { withTranslationProps } from '@/lib/withTranslationProps';
 
 export const getStaticProps = withTranslationProps([
   'common',
   'header',
   'footer',
+  'contact',
 ]);
 
 export default function Home() {
@@ -23,10 +25,10 @@ export default function Home() {
         <title>Insight | Investigations & Intelligence</title>
         <meta
           name='description'
-          content='Short compelling description about this page.'
+          content='High quality, fast, and discreet PI services.'
         />
         <meta name='robots' content='index, follow' />
-        <link rel='canonical' href='https://example.com/' />
+        <link rel='canonical' href='https://insight-inv.co.il/' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
         {/* Open Graph */}
@@ -36,23 +38,29 @@ export default function Home() {
         />
         <meta
           property='og:description'
-          content='Social-friendly description of what the site is.'
+          content='High quality, fast, and discreet PI services.'
         />
-        <meta property='og:image' content='https://example.com/og-image.png' />
-        <meta property='og:url' content='https://example.com' />
+        <meta
+          property='og:image'
+          content='https://insight-inv.co.il/og-image.png'
+        />
+        <meta property='og:url' content='https://insight-inv.co.il' />
         <meta property='og:type' content='website' />
 
         {/* Twitter */}
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='twitter:title'
-          content='Your Client’s Brand | What They Do'
+          content='Insight | Investigations & Intelligence'
         />
         <meta
           name='twitter:description'
-          content='Same or similar to the OG description.'
+          content='Insight | Investigations & Intelligence'
         />
-        <meta name='twitter:image' content='https://example.com/og-image.png' />
+        <meta
+          name='twitter:image'
+          content='https://insight-inv.co.il/og-image.png'
+        />
       </Head>
       <div className=''>
         <HeroSection />
@@ -82,6 +90,12 @@ export default function Home() {
             FAQ
           </span>
           <FAQSection />
+        </div>
+        <div className='relative overflow-x-clip'>
+          <span className='absolute font-black text-9xl opacity-5 -z-10 top-0 left-0 '>
+            Contact
+          </span>
+          <ContactSection />
         </div>
       </div>
     </>

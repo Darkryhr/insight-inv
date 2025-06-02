@@ -8,15 +8,8 @@ import {
 
 import ContactForm from '@/components/ContactForm';
 import OfficeMap from '@/components/ContactForm/OfficeMap';
-import { withTranslationProps } from '@/lib/withTranslationProps';
 
-export const getStaticProps = withTranslationProps([
-  'common',
-  'header',
-  'footer',
-]);
-
-const Contact = () => {
+const ContactSection = () => {
   const { t } = useTranslation('contact');
 
   const contactInfo = [
@@ -60,7 +53,7 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;
 
 const ContactInfo = ({ title, info, icon }) => {
   return (
@@ -75,6 +68,3 @@ const ContactInfo = ({ title, info, icon }) => {
     </div>
   );
 };
-
-//   "address": "Ha-Kharoshet St 30"
-//   "address": "החרושת 30, אור יהודה"
