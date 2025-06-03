@@ -9,10 +9,10 @@
   }
 }
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #121212;
-} */
+:root {
+  --background: #121212;
+  --foreground: #ededed;
+}
 
 @font-face {
   font-family: Raleway;
@@ -25,7 +25,7 @@
 @font-face {
   font-family: 'Noto';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 200 300 400 500 600 700 800 900;
   font-display: swap;
   src: url('/fonts/NotoSansHebrew-VariableFont.ttf') format('truetype');
 }
@@ -48,7 +48,7 @@
 
 html,
 body {
-  @apply bg-black text-white;
+  @apply bg-brand text-white;
 }
 
 html,
