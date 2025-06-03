@@ -81,7 +81,7 @@ export default function Home() {
           </span>
           <ExperienceSection />
         </div>
-        <div className='bg-zinc-600'>
+        <div className='flex justify-center bg-brand-lighter'>
           <ClientCarousel />
         </div>
         <div className='relative overflow-x-clip'>

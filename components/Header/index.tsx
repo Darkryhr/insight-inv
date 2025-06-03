@@ -85,7 +85,7 @@ const Header = () => {
         isSticky ? 'bg-brand drop-shadow-2xl' : 'bg-transparent'
       }`}
     >
-      <div className='mx-auto px-6 sm:px-6 lg:px-8 flex items-center justify-between h-16 w-full'>
+      <div className='mx-auto px-6 sm:px-6 lg:px-8 flex items-center justify-between rtl:flex-row-reverse md:rtl:flex-row h-16 w-full'>
         <div className='flex-shrink-0 lg:flex-1 justify-start'>
           <Link href='/'>
             <Logo />
@@ -151,12 +151,6 @@ const Header = () => {
             {t('cta')}
             <FaChevronRight className='ltr:ml-2 rtl:mr-2 h-3 w-2 transition duration-300 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180' />
           </Link>
-          {/* <Link
-            href='/contact'
-            className='border-2 border-zinc-600 text-gray-50 py-3 px-6 font-bold ml-4 rounded'
-          >
-            Contact us
-          </Link> */}
         </div>
 
         <button
@@ -195,7 +189,7 @@ const Header = () => {
               leaveTo='translate-x-full'
             >
               <DialogPanel className='fixed inset-y-0 right-0 w-3/4 max-w-sm bg-brand shadow-lg'>
-                <div className='flex justify-end items-center'>
+                <div className='flex ltr:justify-end items-center'>
                   <button
                     onClick={() => setMobileNavOpen(false)}
                     className='mr-2 mt-4 cursor-pointer'
@@ -208,7 +202,7 @@ const Header = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className='text-xl capitalize transition-colors duration-100 hover:bg-white hover:text-brand pl-8 py-8 m-0 font-semibold'
+                      className='text-xl capitalize transition-colors duration-100 hover:bg-white hover:text-brand ltr:pl-8 rtl:pr-8 py-8 m-0 font-semibold'
                       onClick={() => setMobileNavOpen(false)}
                     >
                       {item.name}
@@ -217,9 +211,9 @@ const Header = () => {
                   <Link
                     href='/contact'
                     locale={locale}
-                    className='bg-white text-brand py-6 pl-8 font-bold text-2xl'
+                    className='bg-white text-brand py-6 ltr:pl-8 rtl:pr-8 font-bold text-2xl'
                   >
-                    Contact us
+                    {t('cta')}
                   </Link>
                 </nav>
               </DialogPanel>
