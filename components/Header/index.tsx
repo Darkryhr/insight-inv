@@ -87,7 +87,10 @@ const Header = () => {
     >
       <div className='mx-auto px-6 sm:px-6 lg:px-8 flex items-center justify-between rtl:flex-row-reverse md:rtl:flex-row h-16 w-full'>
         <div className='flex-shrink-0 lg:flex-1 justify-start'>
-          <Link href='/'>
+          <Link
+            href='/'
+            className='hover:opacity-75 transition-opacity duration-200'
+          >
             <Logo />
           </Link>
         </div>

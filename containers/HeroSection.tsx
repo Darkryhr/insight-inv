@@ -15,7 +15,9 @@ const HeroSection = () => {
           {t('heading')}
         </h1>
         <div className='md:flex-1 pb-2'>
-          <p className='mt-8 shadow-lg backdrop-blur-md'>{t('subHeading')}</p>
+          <p className='mt-8 shadow-lg backdrop-blur-md text-xl'>
+            {t('subHeading')}
+          </p>
           <button className='bg-linear-to-bl from-white to-zinc-300 text-brand py-3 px-8 font-bold mt-8 rounded cursor-pointer'>
             {t('ctaButton')}
           </button>

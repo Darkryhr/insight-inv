@@ -70,6 +70,7 @@ const ServicesSection = () => {
             key={index}
             title={service.name}
             description={service.description}
+            paragraph={service.paragraph}
             icon={service.icon}
           />
         ))}
