@@ -34,11 +34,13 @@ export default function Home() {
         />
         <meta name='robots' content='index, follow' />
         <link rel='canonical' href='https://insight-inv.co.il/' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta name='apple-mobile-web-app-title' content='Insight' />
 
         {/* Open Graph */}
         <meta
           property='og:title'
-          content='Your Client’s Brand | What They Do'
+          content='Insight | Investigations & Intelligence'
         />
         <meta
           property='og:description'

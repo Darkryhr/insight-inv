@@ -18,30 +18,28 @@ const ContactForm = () => {
 
   const { t } = useTranslation('contact');
 
-  async function sendTestEmail() {
+  const sendTestEmail: SubmitHandler<Inputs> = async () => {
     const res = await fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        to: 'recipient@example.com',
-        subject: 'Hello from Next.js',
-        text: 'This is a test email sent from a Next.js API route.',
+        to: 'gabyk800@gmail.com',
+        subject: 'פנייה חדשה מהאתר',
+        text: 'This is a test email sent, I am on fire',
       }),
     });
 
     const data = await res.json();
     console.log(data);
-  }
-
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  };
 
   return (
     <div className=''>
       <h2 className='font-bold text-4xl'>{t('form.formHeading')}</h2>
       <p className='mt-8'>{t('form.formDescription')}</p>
-      <form className='mx-auto mt-8' onSubmit={handleSubmit(onSubmit)}>
+      <form className='mx-auto mt-8' onSubmit={handleSubmit(sendTestEmail)}>
         <div className='relative z-0 w-full mb-5 group'>
           <input
             type='text'

@@ -144,13 +144,13 @@ const Header = () => {
             )}
           </Menu>
 
-          <Link
-            href='/contact'
+          <a
+            href='#contact'
             className=' bg-gray-50 text-brand py-3 px-7 pr-6 font-bold ltr:ml-4 rtl:mr-4 rounded bg-linear-to-bl from-white to-zinc-300 flex  transition items-center group hover:scale-105 duration-300'
           >
             {t('cta')}
             <FaChevronRight className='ltr:ml-2 rtl:mr-2 h-3 w-2 transition duration-300 ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180' />
-          </Link>
+          </a>
         </div>
 
         <button
@@ -208,13 +208,12 @@ const Header = () => {
                       {item.name}
                     </a>
                   ))}
-                  <Link
-                    href='/contact'
-                    locale={locale}
+                  <a
+                    href='#contact'
                     className='bg-white text-brand py-6 ltr:pl-8 rtl:pr-8 font-bold text-2xl'
                   >
                     {t('cta')}
-                  </Link>
+                  </a>
                 </nav>
               </DialogPanel>
             </TransitionChild>

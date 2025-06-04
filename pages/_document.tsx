@@ -19,8 +19,6 @@ export default function Document(props: any) {
           sizes='180x180'
           href='/apple-touch-icon.png'
         />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta name='apple-mobile-web-app-title' content='Insight' />
         <link rel='manifest' href='/site.webmanifest' />
       </Head>
       <body className='antialiased scroll-smooth font-display '>
