@@ -65,7 +65,7 @@ export default ContactSection;
 const ContactInfo = ({ title, info, href, icon }) => {
   return (
     <a
-      className='bg-zinc-800 text-sm flex px-3 py-4 rounded-lg items-center'
+      className='bg-zinc-800 text-sm flex px-3 py-4 rounded-lg items-center hover:bg-zinc-700 transition-all duration-300 ease-in-out'
       href={href}
       rel='noreferrer'
       target='_blank'

@@ -37,18 +37,18 @@ const Footer = () => {
         </div>
         <div className='md:mx-auto'>
           <h4 className='font-semibold'>{t('sitemap.heading')}</h4>
-          <ul>
+          <ul className='flex flex-col space-y-1 mt-2'>
             {sitemap.map(navlink =>
               navlink.href !== '/contact' ? (
                 <li
-                  className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'
+                  className='opacity-50 font-light transition-opacity duration-100 hover:opacity-100'
                   key={navlink.href}
                 >
                   <a href={navlink.href}>{navlink.name}</a>
                 </li>
               ) : (
                 <li
-                  className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'
+                  className='opacity-50 font-light transition-opacity duration-100 hover:opacity-100'
                   key={navlink.href}
                 >
                   <Link href={navlink.href} locale={changeTo}>
@@ -62,10 +62,10 @@ const Footer = () => {
         <div className='md:mx-auto'>
           <h4 className='font-semibold'>{t('contactInfo.heading')}</h4>
 
-          <ul>
+          <ul className='flex flex-col space-y-1 mt-2'>
             {contactInfo.map(contactLink => (
               <li
-                className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'
+                className='opacity-50 font-light transition-opacity duration-100 hover:opacity-100'
                 key={contactLink.href}
               >
                 <a href={contactLink.href} rel='noreferrer' target='_blank'>
@@ -77,11 +77,11 @@ const Footer = () => {
         </div>
         <div className='md:mx-auto'>
           <h4 className='font-semibold'>{t('legal.heading')}</h4>
-          <ul>
-            <li className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'>
+          <ul className='flex flex-col space-y-1 mt-2'>
+            <li className='opacity-50 font-light transition-opacity duration-100 hover:opacity-100'>
               <Link href={'/'}>{t('legal.privacyPolicy')}</Link>
             </li>
-            <li className='opacity-50 font-light text-sm transition-opacity duration-100 hover:opacity-100'>
+            <li className='opacity-50 font-light transition-opacity duration-100 hover:opacity-100'>
               <Link href={'/'}>{t('legal.termsOfUse')}</Link>
             </li>
           </ul>
@@ -102,7 +102,7 @@ export default Footer;
 
 const SocialButtons = () => {
   return (
-    <ul className='grid grid-cols-3 gap-4'>
+    <ul className='grid grid-cols-2 gap-4'>
       <li>
         <a
           href='https://www.instagram.com/insight_inv/'
@@ -125,13 +125,13 @@ const SocialButtons = () => {
           </button>
         </a>
       </li>
-      <li>
+      {/* <li>
         <a href={''}>
           <button className='cursor-pointer p-2 rounded-lg border border-zinc-700 hover:bg-white hover:text-black transition-colors'>
             <FaTiktok size={14} />
           </button>
         </a>
-      </li>
+      </li> */}
     </ul>
   );
 };

@@ -18,7 +18,7 @@ const ClientCarousel = () => {
           {[...clients, ...clients].map((client, index) => (
             <div
               key={`${client.name}-${index}`}
-              className='p-4 opacity-70 hover:opacity-100 transition-opacity duration-200 flex-shrink-0 w-[20%] flex justify-center items-center'
+              className='md:p-4 p-1 opacity-70 hover:opacity-100 transition-opacity duration-200 flex-shrink-0 w-[20%] flex justify-center items-center'
             >
               <Image
                 src={client.logo}

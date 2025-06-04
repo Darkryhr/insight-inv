@@ -40,13 +40,16 @@ const ServiceCard = ({ title, description, icon, paragraph = '' }) => {
             <DialogPanel
               onClick={close}
               transition
-              className='w-full max-w-xl rounded-xl bg-black/5 p-10 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0
+              className='w-full max-w-xl rounded-xl bg-black/5 md:p-10 p-6 backdrop-blur-2xl duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0
               '
             >
-              <DialogTitle as='h3' className='text-4xl/7 font-bold text-white'>
+              <DialogTitle
+                as='h3'
+                className='md:text-4xl/7 text-2xl/7 font-bold text-white'
+              >
                 {title}
               </DialogTitle>
-              <p className='mt-6 text-white/50 text-lg/6 whitespace-pre-line'>
+              <p className='mt-6 text-white/50 md:text-lg/6 text-base/6 whitespace-pre-line'>
                 {paragraph}
               </p>
               {/* <div className='mt-4'>
