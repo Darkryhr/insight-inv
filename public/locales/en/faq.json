@@ -1,11 +1,29 @@
 {
-  "heading": "שאלות נפוצות",
-  "question1": "d",
-  "answer1": "זהו אתר המאפשר לך ליצור תמונות עם טקסט חופשי.",
-  "question2": "איך זה עובד?",
-  "answer2": "אתה מזין טקסט, בוחר את העיצוב, והאתר יוצר תמונה עבורך.",
-  "question3": "האם זה בחינם?",
-  "answer3": "כן, השימוש באתר הוא חינמי.",
-  "question4": "האם אני יכול לשתף את התמונות שלי?",
-  "answer4": "כן, אתה יכול לשתף את התמונות שלך בכל פלטפורמה שתרצה."
+  "heading": "Frequently Asked Questions",
+  "question1": "Who is allowed to conduct a private investigation? Is a special license required?",
+  "answer1": "According to Israeli law, only investigators licensed by the Ministry of Justice are authorized to provide investigative services.\nIn fact, it is one of the most regulated professions in the country, with an annual committee reviewing the renewal of each investigator’s license. Make sure the investigator handling your case holds a valid license to ensure the investigation is conducted legally — and that its findings will be admissible in court, if needed.",
+
+  "question2": "Can a private investigator’s report be used as evidence in court?",
+  "answer2": "Absolutely.\nA well-written and credible investigative report often plays a decisive role and is considered a professional opinion in legal proceedings. It is important to ensure that the investigation is conducted by a qualified firm that provides professionally drafted, accurate reports.",
+
+  "question3": "How does a private investigation work — what are the main steps and tools involved?",
+  "answer3": "From the moment a client contacts us, we aim to understand the case in depth.\nBased on our professional assessment, we then recommend the most appropriate type of investigation and build a custom strategy together with the client.",
+
+  "question4": "What ethical rules guide private investigators? What are they prohibited from doing by law?",
+  "answer4": "Private investigators in Israel are bound by numerous laws and ethical guidelines designed to prevent unreasonable invasions of privacy or the use of illegal methods.\nA professional investigator is judged not only by the results they deliver but also by how those results were obtained.\nAn investigation carried out unlawfully can be problematic for the client — especially if they intend to present the findings in court.",
+
+  "question5": "What are the costs of hiring a private investigator? Are there different pricing models?",
+  "answer5": "Investigation fees vary depending on the type of case.\nSome investigations are billed hourly, while others are priced based on the specific actions required. In any case, we always provide clients with a detailed quote and proceed only with their full agreement and coordination.",
+
+  "question6": "How do I choose a reliable and professional private investigator? What criteria should I consider?",
+  "answer6": "A good private investigator is a bit like an artist — they either have the knack or they don’t, still, there are several criteria worth considering:\n– Do you trust them? Like any service provider (mechanic, electrician, etc.), a PI should operate with transparency and inform the client about the steps being taken.\n– Make sure they hold a valid license.\n– Make sure they are capable of providing the specific services they offer.\nSome agencies are run by a single investigator who may be highly skilled in one area but lack experience in others. Our firm operates with dedicated investigative teams, each trained and specialized in particular fields with a high level of professionalism.",
+
+  "question7": "How are online and social media investigations conducted? What technological tools are used?",
+  "answer7": "A professional online investigation includes a wide range of tools and techniques for gathering information.\nIt goes beyond surface-level searches on social media or Google and incorporates databases, specialized methods for locating information across social platforms, and supplementary tools like undercover phone inquiries and field agents.",
+
+  "question8": "When should someone turn to the police, and when is it better to hire a private investigator? What are the pros and cons?",
+  "answer8": "Every person has the right to file a report with the Israeli Police, which handles cases with a criminal background. The two main advantages are that the service is free and the police have powerful tools at their disposal, like real-time databases and the authority to detain and question suspects.\nOn the other hand, the police typically won’t get involved in civil matters such as personal or business disputes, or suspicions that don’t involve a criminal offense. Even when they do, the process can often be slow, bureaucratic, and discouraging.\nMany of our investigations have produced meaningful evidence, even in criminal cases, which — when brought to the police — led to serious action and thorough handling.",
+
+  "question9": "When should I consider hiring a private investigator? What are the most common cases?",
+  "answer9": "A private investigation firm is like a personal intelligence unit.\nWe gather critical information across a wide range of fields and often provide the missing piece — the 'golden detail' — that the client needs. Clients come to us for help solving personal problems or verifying suspicions.\nCommon cases include suspected infidelity, financial investigations, background checks for legal claims, employee misconduct or employer abuse, and many other situations."
 }

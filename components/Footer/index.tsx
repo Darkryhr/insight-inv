@@ -15,7 +15,7 @@ const Footer = () => {
     { name: t('sitemap.about'), href: '#about' },
     { name: t('sitemap.services'), href: '#services' },
     { name: t('sitemap.faq'), href: '#faq' },
-    { name: t('sitemap.contact'), href: '/contact' },
+    { name: t('sitemap.contact'), href: '#contact' },
   ];
 
   const contactInfo = [
@@ -92,9 +92,7 @@ const Footer = () => {
       </div>
       <div className='flex flex-col items-center justify-center pb-10'>
         <div className='h-[1px] bg-zinc-700 w-full my-10'></div>
-        <p className='font-light text-xs opacity-50'>
-          ©2025 Insight All rights reserved
-        </p>
+        <p className='font-light text-xs opacity-50'>©2025 {t('copyright')}</p>
       </div>
     </footer>
   );

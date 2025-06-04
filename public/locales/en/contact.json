@@ -1,18 +1,18 @@
 {
-  "heading": "יצירת קשר",
-  "emailHeading": "כתובת",
+  "heading": "Contact",
+  "emailHeading": "E-mail",
   "email": "office@insight-inv.co.il",
-  "phoneNumberHeading": "כתובת",
+  "phoneNumberHeading": "Phone Number",
   "phoneNumber": "054-802-2001",
-  "addressHeading": "כתובת",
-  "addressValue": "החרושת 30, אור יהודה",
+  "addressHeading": "Address",
+  "addressValue": "Ha-Kharoshet St 30, Or Yehuda",
   "form": {
-    "formHeading": "צור קשר",
-    "formDescription": "נשמח לשמוע ממך! מלא את הטופס למטה ונחזור אליך בהקדם.",
-    "nameInputLabel": "שם מלא",
-    "emailInputLabel": "כתובת דוא\"ל",
-    "phoneInputLabel": "מספר טלפון",
-    "messageInputLabel": "הודעה",
-    "submitButton": "שלח"
+    "formHeading": "Get in Touch",
+    "formDescription": "We'd love to hear from you! Please fill out the form below and we will get back to you as soon as possible.",
+    "nameInputLabel": "Full Name",
+    "emailInputLabel": "E-mail",
+    "phoneInputLabel": "Phone Number",
+    "messageInputLabel": "Message",
+    "submitButton": "Send"
   }
 }

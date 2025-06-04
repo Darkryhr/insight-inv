@@ -1,0 +1,38 @@
+{
+  "heading": "Our Services",
+  "service_tracking_surveillance": {
+    "name": "Surveillance and Observation",
+    "description": "Discreet monitoring, fieldwork, and intelligence gathering using advanced imaging and technology.",
+    "paragraph": "Our firm specializes in surveillance and intelligence gathering. Our team includes dozens of seasoned investigators with extensive backgrounds in intelligence and security units. They conduct covert operations and gather information using advanced technological tools, both in Israel and abroad, as needed.\n\nOur emergency response unit is available on short notice to collect court-admissible evidence when time is critical.\n\nThe effectiveness of our surveillance is based on both the professionalism of our investigators and the cutting-edge equipment they employ."
+  },
+  "service_undercover_investigations": {
+    "name": "Undercover Investigations",
+    "description": "Operating under alternate identities, deep research, and the creation of tailored cover stories.",
+    "paragraph": "Our investigators are skilled in carrying out sensitive and complex undercover assignments tailored to a wide range of scenarios. These investigations involve operating under false identities and are preceded by in-depth research and the creation of a precise persona and backstory tailored to the case.\n\nWe conduct surveillance, gather intelligence, and establish connections with individuals relevant to the investigation. Thanks to the diverse skills of our male and female investigators, we can uncover crucial information and identify suspicious behavior — even in varied populations and across multiple languages.\n\nThese investigations are especially suited to cases of suspected infidelity, corporate espionage, and trade secret theft."
+  },
+  "service_financial_investigations": {
+    "name": "Financial Investigations",
+    "description": "Gathering financial intelligence on individuals and businesses — often used as legal evidence.",
+    "paragraph": "Our firm has years of experience in conducting financial investigations into individuals and companies. Our skilled investigators are capable of locating and analyzing assets such as real estate, vehicles, bank accounts, investments, and other financial data. We cross-reference multiple databases and information sources to accurately assess a subject’s financial and business activity.\n\nAt the end of each investigation, we provide a detailed report that includes a financial analysis, identification of undisclosed assets, and recommendations for further investigative or legal steps. Our ability to access sensitive financial data has made us a trusted resource for clients requiring comprehensive financial intelligence."
+  },
+  "service_cyber_and_information_investigations": {
+    "name": "Cyber and Digital Investigations",
+    "description": "Advanced information and cyber investigations combining traditional tradecraft with modern technology.",
+    "paragraph": "Sela Investigations offers advanced cyber and information investigation services, combining traditional investigative skills with cutting-edge technology.\n\nOur cyber investigators specialize in covert data gathering, agent deployment, and advanced computer-based techniques that allow us to uncover critical digital information.\n\nOver the years, we’ve revealed many forms of key intelligence for our clients — often uncovering the missing piece that strengthens legal cases or strategic decisions.\n\nOur cyber team can effectively investigate digital identities, including email addresses, fake social media profiles, and sources of online harassment. Using sophisticated cyber techniques, they can often trace suspicious activity back to the individual responsible."
+  },
+  "service_locating": {
+    "name": "Person and Data Location",
+    "description": "Professional locating services to find contact details, addresses, phone numbers, and more.",
+    "paragraph": "We offer accurate, professional locating services to retrieve personal data such as addresses, phone numbers, and other identifying information. Our proven methods and extensive experience allow us to deliver quick and reliable results — even in evasive or difficult cases.\n\nIn many instances, locating a subject is essential for serving legal documents in accordance with court or enforcement regulations.\n\nAdditionally, these investigations may provide insight into a subject’s overall situation, including financial status."
+  },
+  "service_background_checks": {
+    "name": "Background Checks",
+    "description": "Comprehensive background reports on individuals or businesses — a vital step to avoid future risks.",
+    "paragraph": "Clients turn to us for thorough background checks on individuals and businesses. A fast and accurate background check can reveal critical information that helps avoid emotional or financial harm — or bring peace of mind before entering a personal or business relationship.\n\nFor personal background checks, we examine the subject’s history, behavior, and personal data to flag potential issues that could impact future relationships. In business-related checks, we focus on reviewing past ventures, financial records, legal involvement, and business connections.\n\nWe also conduct background checks for one-time transactions such as real estate or vehicle purchases."
+  },
+  "service_complex_investigations": {
+    "name": "Complex Investigations",
+    "description": "Integrated strategies combining fieldwork, OSINT, agent deployment, and advanced tactics.",
+    "paragraph": "Some cases require a combination of investigative tools and methods. Our diverse and experienced team allows us to build investigations tailored to each client’s specific situation.\n\nAfter a thorough case analysis, we work with the client to develop a structured strategy. Complex investigations may involve fieldwork, open-source intelligence (OSINT), long-term undercover agents, and other tactical measures — all working in sync to create a comprehensive and effective investigation.\n\nThis approach enables us to uncover information that standard methods might miss and ensures a deep, efficient, and legally sound process.\n\nWe recognize that every client and every case is unique, so we adapt our strategy to the client’s profile and goals. With our highly experienced, multi-disciplinary team, we ensure that every detail receives the utmost professional attention."
+  }
+}

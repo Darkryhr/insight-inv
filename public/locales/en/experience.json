@@ -1,0 +1,16 @@
+{
+  "heading": "Our Principles",
+  "dependability": {
+    "title": "Dependability",
+    "description": "Like when selecting any professional, we put great importance on the trust our clients place in us. We are committed to providing a professional service, with a dependability and transparency as our guiding principles.\nIn our free initial consultation, you'll get a clear picture of the process and see that you are an integral part of it, throughout its entirety."
+  },
+
+  "professionalism": {
+    "title": "Professionalism",
+    "description": "In our ever changing world, we are working constantly to stay updated with the latest developments in the field of investigation, and implement advanced tools and methods such as: AI, Cyber forensics technologies, and more.\nWith that in mind, we do not compromise on the human factor, and the traditional methods with which our investigators developed great skills, and experience, and have proven effective for generations."
+  },
+  "discretion": {
+    "title": "Discretion",
+    "description": "We understand that the nature of our work requires a high level of discretion and confidentiality. We handle all cases with the utmost care, ensuring that sensitive information is protected at all times.\nOur team is trained to operate discreetly, minimizing any potential impact on your personal or professional life."
+  }
+}

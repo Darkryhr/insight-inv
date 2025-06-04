@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 
 import ClientCarousel from '@/components/ClientCarousel';
 import {
@@ -12,7 +13,6 @@ import ContactSection from '@/containers/ContactSection';
 import { withTranslationProps } from '@/lib/withTranslationProps';
 
 export const getStaticProps = withTranslationProps([
-  'common',
   'header',
   'hero',
   'about',
@@ -68,6 +68,10 @@ export default function Home() {
           content='https://insight-inv.co.il/og-image.png'
         />
       </Head>
+      <Script
+        src='https://website-widgets.pages.dev/dist/sienna.min.js'
+        defer
+      ></Script>
       <div className=''>
         <HeroSection />
         <div className='relative overflow-x-clip'>
