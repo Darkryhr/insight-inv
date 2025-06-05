@@ -1,14 +1,11 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document(props: any) {
-  const locale = props.__NEXT_DATA__.locale || 'en';
+  const locale = props.__NEXT_DATA__.locale;
+  const dir = locale === 'he' ? 'rtl' : 'ltr';
 
   return (
-    <Html
-      lang={locale}
-      className='no-scrollbar'
-      dir={'he' === locale ? 'rtl' : 'ltr'}
-    >
+    <Html className='no-scrollbar' lang={locale} dir={dir}>
       <Head>
         <link
           rel='icon'

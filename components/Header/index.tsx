@@ -12,10 +12,13 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { BiSolidDownArrow } from 'react-icons/bi';
+import { BiHomeAlt, BiSolidDownArrow } from 'react-icons/bi';
 import { FaChevronRight } from 'react-icons/fa';
+import { FiUser } from 'react-icons/fi';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
-import { IoIosClose } from 'react-icons/io';
+import { IoIosClose, IoMdHelpCircleOutline } from 'react-icons/io';
+import { MdMailOutline } from 'react-icons/md';
+import { VscTools } from 'react-icons/vsc';
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -30,10 +33,19 @@ const Header = () => {
   const changeTo = locale === 'he' ? 'en' : 'he';
 
   const navigation = [
-    { name: t('nav.home'), href: '#hero' },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.services'), href: '#services' },
-    { name: t('nav.faq'), href: '#faq' },
+    { name: t('nav.home'), href: '#hero', icon: <BiHomeAlt size={20} /> },
+    { name: t('nav.about'), href: '#about', icon: <FiUser size={20} /> },
+    {
+      name: t('nav.services'),
+      href: '#services',
+      icon: <VscTools size={20} />,
+    },
+    {
+      name: t('nav.faq'),
+      href: '#faq',
+      icon: <IoMdHelpCircleOutline size={20} />,
+    },
+    { name: t('cta'), href: '#contact', icon: <MdMailOutline size={20} /> },
   ];
 
   useEffect(() => {
@@ -97,22 +109,25 @@ const Header = () => {
 
         {/* === Desktop Navigation === */}
         <nav
-          className='hidden lg:flex space-x-14 flex-1 justify-center'
+          className='hidden lg:flex space-x-14 flex-1 justify-center items-center'
           aria-label='Main navigation'
         >
-          {navigation.map(item => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={`transition-colors capitalize duration-300 px-4 py-2 hover:text-zinc-50 ${
-                activeSection === item.name
-                  ? 'border-b-2 font-bold'
-                  : 'text-zinc-400'
-              }`}
-            >
-              {item.name}
-            </a>
-          ))}
+          {navigation.map(
+            item =>
+              item.href !== '#contact' && (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`transition-colors capitalize duration-300 px-4 py-2 hover:text-zinc-50 ${
+                    activeSection === item.name
+                      ? 'border-b-2 font-bold'
+                      : 'text-zinc-400'
+                  }`}
+                >
+                  {item.name}
+                </a>
+              )
+          )}
         </nav>
 
         <div className='hidden lg:flex items-center space-x-4 flex-1 justify-end'>
@@ -205,18 +220,12 @@ const Header = () => {
                     <a
                       key={item.name}
                       href={item.href}
-                      className='text-xl capitalize transition-colors duration-100 hover:bg-white hover:text-brand ltr:pl-8 rtl:pr-8 py-8 m-0 font-semibold'
+                      className='text-xl capitalize transition-colors duration-100 hover:bg-white hover:text-brand ltr:pl-8 rtl:pr-8 py-8 m-0 font-semibold flex items-center gap-2'
                       onClick={() => setMobileNavOpen(false)}
                     >
-                      {item.name}
+                      {item.icon} {item.name}
                     </a>
                   ))}
-                  <a
-                    href='#contact'
-                    className='bg-white text-brand py-6 ltr:pl-8 rtl:pr-8 font-bold text-2xl'
-                  >
-                    {t('cta')}
-                  </a>
                 </nav>
               </DialogPanel>
             </TransitionChild>

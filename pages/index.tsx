@@ -21,6 +21,8 @@ export const getStaticProps = withTranslationProps([
   'faq',
   'contact',
   'footer',
+  'accessibility',
+  'terms',
 ]);
 
 export default function Home() {

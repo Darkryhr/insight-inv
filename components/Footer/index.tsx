@@ -79,10 +79,12 @@ const Footer = () => {
           <h4 className='font-semibold'>{t('legal.heading')}</h4>
           <ul className='flex flex-col space-y-1 mt-2'>
             <li className='opacity-50 font-light transition-opacity duration-100 hover:opacity-100'>
-              <Link href={'/'}>{t('legal.privacyPolicy')}</Link>
+              <Link href={'/accessibility'}>
+                {t('legal.accessibilityStatement')}
+              </Link>
             </li>
             <li className='opacity-50 font-light transition-opacity duration-100 hover:opacity-100'>
-              <Link href={'/'}>{t('legal.termsOfUse')}</Link>
+              <Link href={'/tou'}>{t('legal.termsOfUse')}</Link>
             </li>
           </ul>
         </div>
