@@ -13,6 +13,8 @@
     "emailInputLabel": "כתובת דוא\"ל",
     "phoneInputLabel": "מספר טלפון",
     "messageInputLabel": "הודעה",
-    "submitButton": "שלח"
+    "submitButton": "שלח",
+    "formToastHeading": "תודה על פנייתכם!.",
+    "formToastSubheading": "פנייתכם התקבלה בהצלחה."
   }
 }

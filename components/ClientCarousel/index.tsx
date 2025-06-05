@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
 const clients = [
-  { name: 'Apple', logo: '/clients/client1.png' },
-  { name: 'Google', logo: '/clients/client2.png' },
-  { name: 'Amazon', logo: '/clients/client3.png' },
-  { name: 'Meta', logo: '/clients/client4.png' },
-  { name: 'Netflix', logo: '/clients/client5.png' },
+  { name: 'TnM', logo: '/clients/client1.png' },
+  { name: 'Sparta', logo: '/clients/client2.png' },
+  { name: 'Defense', logo: '/clients/client3.png' },
+  { name: 'Raven', logo: '/clients/client4.png' },
+  { name: 'KiryatMalachi', logo: '/clients/client5.png' },
 ];
 
 const ClientCarousel = () => {

@@ -9,20 +9,17 @@ export default async function handler(
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { to, subject, text } = req.body;
+  const { to, subject, text, html } = req.body;
 
   if (!to || !subject || !text) {
     return res.status(400).json({ message: 'Missing fields' });
   }
 
-  console.log('USER:', process.env.EMAIL_USER);
-  console.log('PASS:', process.env.EMAIL_PASS?.length);
-
   try {
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 465,
-      secure: true, // use SSL
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -34,6 +31,7 @@ export default async function handler(
       to,
       subject,
       text,
+      html,
     };
 
     const info = await transporter.sendMail(mailOptions);

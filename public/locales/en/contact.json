@@ -13,6 +13,8 @@
     "emailInputLabel": "E-mail",
     "phoneInputLabel": "Phone Number",
     "messageInputLabel": "Message",
-    "submitButton": "Send"
+    "submitButton": "Send",
+    "formToastHeading": "Thank you for reaching out!",
+    "formToastSubheading": "Your message has been sent successfully."
   }
 }
