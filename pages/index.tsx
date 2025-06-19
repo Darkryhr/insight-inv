@@ -74,42 +74,13 @@ export default function Home() {
         src='https://website-widgets.pages.dev/dist/sienna.min.js'
         defer
       ></Script>
-      <div className=''>
-        <HeroSection />
-        <div className='relative overflow-x-clip'>
-          <span className='absolute font-black text-9xl opacity-5 -z-10 top-0'>
-            About
-          </span>
-          <AboutSection />
-        </div>
-        <div className='relative overflow-x-clip'>
-          <span className='absolute font-black text-9xl opacity-5 -z-1 top-10 left-1/4'>
-            Experience
-          </span>
-          <ExperienceSection />
-        </div>
-        <div className='flex justify-center bg-brand-lighter'>
-          <ClientCarousel />
-        </div>
-        <div className='relative overflow-x-clip'>
-          <span className='absolute font-black text-9xl opacity-5 -z-10 top-0 -end-1/12 '>
-            Services
-          </span>
-          <ServicesSection />
-        </div>
-        <div className='relative overflow-x-clip'>
-          <span className='absolute font-black text-9xl opacity-5 -z-10 top-0 left-0 '>
-            FAQ
-          </span>
-          <FAQSection />
-        </div>
-        <div className='relative overflow-x-clip'>
-          <span className='absolute font-black text-9xl opacity-5 -z-10 top-0 left-0 '>
-            Contact
-          </span>
-          <ContactSection />
-        </div>
-      </div>
+      <HeroSection />
+      <AboutSection />
+      <ExperienceSection />
+      <ClientCarousel />
+      <ServicesSection />
+      <FAQSection />
+      <ContactSection />
     </>
   );
 }
