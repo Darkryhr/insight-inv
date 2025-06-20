@@ -1,5 +1,5 @@
+import ScrollAnimation from '@/components/ScrollAnimation';
 import { useTranslation } from 'next-i18next';
-
 import { BsIncognito } from 'react-icons/bs';
 import { FaRegCreditCard, FaRegIdBadge } from 'react-icons/fa';
 import { IoTerminalOutline } from 'react-icons/io5';
@@ -58,10 +58,10 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section
+    <ScrollAnimation
       className='px-8 py-24 max-w-7xl mx-auto relative scroll-mt-20'
       id='services'
-      data-section='services'
+      data_section='services'
     >
       <h2 className='font-bold text-4xl'>{t('heading')}</h2>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8'>
@@ -75,7 +75,7 @@ const ServicesSection = () => {
           />
         ))}
       </div>
-    </section>
+    </ScrollAnimation>
   );
 };
 

@@ -1,26 +1,62 @@
+import ScrollAnimation from '@/components/ScrollAnimation';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 
 const HeroSection = () => {
   const { t } = useTranslation('hero');
 
   return (
-    <section
+    <ScrollAnimation
       className='px-6 py-12 max-w-7xl mx-auto h-screen scroll-mt-24'
       id='hero'
-      data-section='home'
+      data_section='home'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
     >
       <div className='bg-[url(/hero.jpg)] bg-cover w-full h-full absolute -z-10 left-0 top-0'></div>
 
-      <div className='flex flex-col justify-center h-full pb-40 lg:px-0 md:px-12 px-18  items-center space-y-8 fill-white'>
-        <Logotype />
-        <Wordtype />
-        <div className='h-0.5 md:w-1/3 w-full bg-white'></div>
-        <p className='shadow-lg backdrop-blur-md text-2xl'>{t('subHeading')}</p>
-        <button className='bg-linear-to-bl from-white to-zinc-300 text-brand py-3 px-8 font-bold rounded cursor-pointer lg:text-lg'>
+      <div className='flex flex-col justify-center h-full pb-44 lg:px-0 md:px-12 px-18  items-center space-y-8 fill-white'>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <Logotype />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Wordtype />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className='h-0.5 md:w-1/3 w-full bg-white'
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <p className='shadow-lg backdrop-blur-md text-2xl'>
+            {t('subHeading')}
+          </p>
+        </motion.div>
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
+          href='#contact'
+          className='bg-linear-to-bl from-white to-zinc-300 text-brand py-3 px-8 font-bold rounded cursor-pointer lg:text-lg transition duration-300 ease-in-out hover:scale-105'
+        >
           {t('ctaButton')}
-        </button>
+        </motion.a>
       </div>
-    </section>
+    </ScrollAnimation>
   );
 };
 

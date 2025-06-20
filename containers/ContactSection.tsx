@@ -1,3 +1,4 @@
+import ScrollAnimation from '@/components/ScrollAnimation';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 import {
@@ -34,10 +35,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section
+    <ScrollAnimation
       className='px-8 py-12 max-w-7xl mx-auto relative scroll-mt-20'
       id='contact'
-      data-section='contact'
+      data_section='contact'
     >
       <div className='bg-brand-lighter rounded-lg py-14 px-10 grid grid-cols-1 md:grid-cols-2 gap-8'>
         <ContactForm />
@@ -56,7 +57,7 @@ const ContactSection = () => {
           <OfficeMap />
         </div>
       </div>
-    </section>
+    </ScrollAnimation>
   );
 };
 

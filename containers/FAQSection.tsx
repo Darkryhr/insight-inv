@@ -1,3 +1,4 @@
+import ScrollAnimation from '@/components/ScrollAnimation';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
@@ -48,10 +49,10 @@ const FAQSection = () => {
   ];
 
   return (
-    <section
+    <ScrollAnimation
       className='px-8 py-24 max-w-7xl mx-auto'
       id='faq'
-      data-section='fAQ'
+      data_section='fAQ'
     >
       <h2 className='font-bold text-4xl'>{t('heading')}</h2>
       {faqs.map((faq, index) => (
@@ -64,7 +65,7 @@ const FAQSection = () => {
           setOpenIndex={setOpenIndex}
         />
       ))}
-    </section>
+    </ScrollAnimation>
   );
 };
 

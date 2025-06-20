@@ -1,7 +1,7 @@
+import ScrollAnimation from '@/components/ScrollAnimation';
 import { useTranslation } from 'next-i18next';
 import { FaShieldAlt } from 'react-icons/fa';
 import { IoEyeOffOutline } from 'react-icons/io5';
-import { LuGlobe } from 'react-icons/lu';
 import { TbTie } from 'react-icons/tb';
 
 import ExperienceCard from '@/components/ExperienceCard';
@@ -28,7 +28,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section
+    <ScrollAnimation
       className='px-8 pt-10 pb-16 max-w-7xl mx-auto relative scroll-mt-20'
       id='experience'
     >
@@ -43,7 +43,7 @@ const ExperienceSection = () => {
           />
         ))}
       </div>
-    </section>
+    </ScrollAnimation>
   );
 };
 
