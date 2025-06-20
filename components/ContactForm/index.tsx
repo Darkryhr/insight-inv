@@ -19,8 +19,12 @@ function escapeHTML(str = '') {
 }
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, 'Name is too short'),
-  email: z.string().email('Invalid email address'),
+  name: z
+    .string({ required_error: 'A name is required' })
+    .min(2, 'Name is too short'),
+  email: z
+    .string({ required_error: 'An email is required' })
+    .email('Invalid email address'),
   phone: z.string().optional(),
   message: z.string().optional(),
 });
@@ -73,7 +77,7 @@ ${sanitizedInputs.message}
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: 'gabyk800@gmail.com',
+          to: 'office@insight-inv.co.il',
           subject: 'פנייה חדשה מהאתר',
           text,
           html,
@@ -107,6 +111,7 @@ ${sanitizedInputs.message}
     }
   };
 
+  console.log(errors);
   return (
     <div className=''>
       <h2 className='font-bold text-4xl'>{t('form.formHeading')}</h2>
@@ -121,8 +126,11 @@ ${sanitizedInputs.message}
             className='block py-3 px-0 w-full text-gray-50 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
             {...register('name')}
           />
-          {errors.name?.type === 'required' && (
-            <p role='alert'>A name is required</p>
+
+          {errors.name && (
+            <span className='text-red-500 text-sm absolute pt-1'>
+              {errors.name.message}
+            </span>
           )}
 
           <label
@@ -141,9 +149,12 @@ ${sanitizedInputs.message}
             className='block py-3 px-0 w-full text-gray-50 bg-transparent border-0 border-b-2 border-zinc-600 appearance-none focus:outline-none focus:ring-0 focus:border-zinc-400 peer text-sm'
             {...register('email')}
           />
-          {errors.email?.type === 'required' && (
-            <p role='alert'>An e-mail is required</p>
+          {errors.email && (
+            <span className='text-red-500 text-sm absolute pt-1'>
+              {errors.email.message}
+            </span>
           )}
+
           <label
             htmlFor='email'
             className='text-zinc-500 peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-zinc-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
