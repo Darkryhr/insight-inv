@@ -5,14 +5,14 @@ const ScrollAnimation = ({
   children,
   initial = { opacity: 0 },
   animate = { opacity: 1 },
-  transition = { duration: 0.7 },
+  transition = { duration: 0.5 },
   className = '',
   id,
   data_section = '',
 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger animation only once when it's in view
-    threshold: 0.5, // Trigger when 50% of the section is visible
+    threshold: 0.2, // Trigger when 50% of the section is visible
   });
 
   return (
