@@ -7,7 +7,7 @@ const HeroSection = () => {
 
   return (
     <ScrollAnimation
-      className='px-6 py-12 max-w-7xl mx-auto h-screen scroll-mt-24'
+      className='px-6 py-12 max-w-7xl mx-auto h-[90vh] scroll-mt-24'
       id='hero'
       data_section='home'
       initial={{ opacity: 0 }}
@@ -16,7 +16,7 @@ const HeroSection = () => {
     >
       <div className='bg-[url(/hero.jpg)] bg-cover w-full h-full absolute -z-10 left-0 top-0'></div>
 
-      <div className='flex flex-col justify-center h-full pb-44 lg:px-0 md:px-12 px-18  items-center space-y-8 fill-white'>
+      <div className='flex flex-col justify-center h-full pb-24 lg:px-0 md:px-12 px-18  items-center space-y-8 fill-white'>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

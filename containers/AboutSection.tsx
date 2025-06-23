@@ -8,7 +8,7 @@ const AboutSection = () => {
 
   return (
     <ScrollAnimation
-      className='px-8 py-20 max-w-7xl mx-auto relative scroll-mt-20'
+      className='px-8 py-28 max-w-7xl mx-auto relative scroll-mt-20'
       id='about'
       data_section='about'
     >
