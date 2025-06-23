@@ -51,7 +51,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.9 }}
           href='#contact'
-          className='bg-linear-to-bl from-white to-zinc-300 text-brand py-3 px-8 font-bold rounded cursor-pointer lg:text-lg transition duration-300 ease-in-out hover:scale-105'
+          className='bg-linear-to-bl from-white to-zinc-300 text-brand py-3 px-8 font-bold rounded cursor-pointer lg:text-lg transition duration-300 ease-in-out hover:scale-105 text-center'
         >
           {t('ctaButton')}
         </motion.a>
