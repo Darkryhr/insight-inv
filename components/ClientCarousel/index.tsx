@@ -6,6 +6,7 @@ const clients = [
   { name: 'Defense', logo: '/clients/client3.png' },
   { name: 'Raven', logo: '/clients/client4.png' },
   { name: 'KiryatMalachi', logo: '/clients/client5.png' },
+  { name: 'BLP', logo: '/clients/client6.png' },
 ];
 
 const ClientCarousel = () => {
